@@ -1,5 +1,7 @@
 FROM ollama/ollama
 
-RUN ollama pull qwen2.5:3b
+RUN ollama serve & sleep 10 && ollama pull tinyllama
+
+EXPOSE 11434
 
 CMD ["ollama", "serve"]
